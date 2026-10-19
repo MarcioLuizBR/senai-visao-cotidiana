@@ -24,10 +24,15 @@
 
 ### Pendências
 
-- Registrar o link do quadro Trello no README.
+
 - Selecionar dataset e pelo menos 10 classes.
 - Verificar origem, licença e anotações dos dados.
 - Instalar e testar as dependências de inferência.
+
+### Concluído
+
+- Quadro Kanban criado no Trello e vinculado no README.
+- Escopo inicial documentado.
 
 ### Próximo passo
 

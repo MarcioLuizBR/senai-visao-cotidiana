@@ -38,3 +38,37 @@ Após clonar o repositório, execute:
 
 ```powershell
 uv sync
+```
+
+Para verificar o Python utilizado:
+
+```powershell
+uv run python --version
+```
+
+O ambiente virtual fica na pasta `.venv` e não deve ser versionado.
+
+As dependências de detecção e da API serão adicionadas nas próximas etapas.
+
+## Organização do desenvolvimento
+
+- `main`: versão final integrada.
+- `develop`: integração das etapas revisadas.
+- `feature/*`: desenvolvimento de cada tarefa.
+
+## Planejamento
+
+As tarefas são organizadas no
+[quadro Kanban do Trello](https://trello.com/b/Evdfm58f/senai-visao-cotidiana).
+
+O histórico de decisões e pendências está em
+[Registro de progresso](docs/progresso.md).
+
+## Situação atual
+
+Ambiente Python configurado com uv.
+Seleção do dataset e implementação ainda não iniciadas.
+
+## Autor
+
+Márcio Luiz
