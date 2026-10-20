@@ -60,3 +60,13 @@ da integração na develop.
 
 Conferir visualmente as detecções e selecionar o dataset de avaliação
 com pelo menos 10 classes.
+
+### Inspeção visual da primeira inferência
+
+- Imagem com bounding boxes salva localmente em runs/primeira_deteccao.
+- Identificações visualmente coerentes para cadeiras, pessoa, notebook,
+  sofá, mesa, vasos, caneca e livros.
+- Possível confusão entre um recipiente alto e a classe cup.
+- Observadas detecções plausíveis com confiança inferior a 0.50.
+- Limiar mantido em 0.25, sem ajuste baseado apenas nesta imagem.
+- Inspeção qualitativa; não foram calculadas métricas de acurácia ou mAP.

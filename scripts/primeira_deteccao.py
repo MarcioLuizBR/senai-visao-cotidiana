@@ -35,7 +35,17 @@ def main():
     )
 
     resultado = resultados[0]
+
+    # Salva uma imagem anotada para inspeção visual das previsões.
+    # Este recurso pertence ao teste local; a futura API retornará JSON.
+    pasta_saida = Path("runs/primeira_deteccao")
+    pasta_saida.mkdir(parents=True, exist_ok=True)
+
+    caminho_saida = pasta_saida / f"{args.imagem.stem}_deteccoes.jpg"
+    resultado.save(filename=str(caminho_saida))
+
     deteccoes = []
+    
 
     # Cada caixa contém a classe prevista, a confiança e as coordenadas
     # em pixels, relativas à imagem original.
