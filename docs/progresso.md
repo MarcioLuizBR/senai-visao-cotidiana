@@ -38,3 +38,25 @@
 
 Concluir a documentação inicial e revisar a etapa antes
 da integração na develop.
+
+## 20/10/2026 — Primeira inferência em CPU
+
+### Concluído
+
+- Dependências de inferência instaladas e importações verificadas.
+- PyTorch 2.14.1+cpu, Torchvision 0.29.1+cpu e Ultralytics 8.4.183.
+- Script scripts/primeira_deteccao.py criado com comentários explicativos.
+- YOLO26n pré-treinado executado em CPU sobre uma imagem local.
+- Retorno JSON com classe, confiança e bounding box verificado.
+- Teste inicial produziu 12 detecções de 9 classes distintas.
+
+### Limitações
+
+- Teste funcional em uma única imagem.
+- Detecções ainda não conferidas visualmente.
+- Resultado não representa a avaliação do dataset nem comprova acurácia.
+
+### Próximo passo
+
+Conferir visualmente as detecções e selecionar o dataset de avaliação
+com pelo menos 10 classes.
