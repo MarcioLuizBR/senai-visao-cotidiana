@@ -179,3 +179,10 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Pesos baixados e resultados locais de inferência
+*.pt
+runs/
+
+# Imagens usadas nos testes locais
+data/local/
