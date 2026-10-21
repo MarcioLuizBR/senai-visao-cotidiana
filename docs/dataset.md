@@ -97,8 +97,11 @@ e o manifesto necessário para reproduzir a seleção.
 
 ## Situação atual
 
-Seleção concluída. Download e verificação das imagens,
-verificação dos termos de uso e avaliação do modelo ainda pendentes.
+Seleção e download concluídos: 196 imagens verificadas, sem falhas
+de leitura, integridade ou divergências de dimensões.
+
+Verificação dos termos de uso, validação das anotações e avaliação
+do modelo ainda pendentes.
 
 ## Resultado da seleção
 
@@ -130,5 +133,6 @@ O manifesto está em [dataset_manifesto.json](dataset_manifesto.json).
 
 ### Estado após a seleção
 
-Seleção e contagens concluídas. Download e verificação das
-imagens ainda pendentes. Nenhuma métrica do modelo foi calculada.
+Seleção, contagens e download concluídos. As 196 imagens passaram
+pelas verificações de integridade, leitura e dimensões.
+Nenhuma métrica do modelo foi calculada.
