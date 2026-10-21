@@ -97,5 +97,38 @@ e o manifesto necessário para reproduzir a seleção.
 
 ## Situação atual
 
-Planejamento definido. Download, verificação de licenças,
-seleção e contagens reais ainda pendentes.
+Seleção concluída. Download e verificação das imagens,
+verificação dos termos de uso e avaliação do modelo ainda pendentes.
+
+## Resultado da seleção
+
+Seleção executada com semente 42 e sorteio de 20 imagens por classe,
+seguido da união dos IDs e remoção de duplicatas.
+
+- Imagens únicas: 196.
+- Anotações preservadas: 1.431.
+- Objetos individuais: 1.415.
+- Anotações de multidões (iscrowd): 16.
+
+| Classe | Imagens com objetos individuais | Objetos individuais |
+|---|---:|---:|
+| person | 114 | 418 |
+| chair | 77 | 260 |
+| couch | 42 | 59 |
+| potted plant | 43 | 78 |
+| dining table | 61 | 90 |
+| laptop | 37 | 46 |
+| cup | 46 | 110 |
+| bottle | 46 | 123 |
+| book | 44 | 182 |
+| cell phone | 38 | 49 |
+
+Uma imagem pode conter várias classes, portanto as contagens
+da coluna de imagens não devem ser somadas como arquivos distintos.
+
+O manifesto está em [dataset_manifesto.json](dataset_manifesto.json).
+
+### Estado após a seleção
+
+Seleção e contagens concluídas. Download e verificação das
+imagens ainda pendentes. Nenhuma métrica do modelo foi calculada.
