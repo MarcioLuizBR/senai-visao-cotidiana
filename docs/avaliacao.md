@@ -106,3 +106,32 @@ O tempo medido não representa a latência da API.
 
 Análise de erros ainda pendente, com atenção inicial às classes
 book e chair. Nenhum parâmetro foi ajustado após esta avaliação.
+
+## Análise qualitativa das previsões
+
+As previsões salvas foram comparadas às referências COCO,
+utilizando confiança mínima de 0.25 apenas para visualização.
+As métricas originais foram preservadas.
+
+### Exemplos examinados
+
+- book, imagem 89648: seis referências e nenhuma previsão da classe
+  exibida acima do limiar visual. Possíveis candidatos abaixo desse
+  limiar não aparecem no painel. A aparência dos materiais apresenta
+  ambiguidades já registradas na inspeção das referências.
+- chair, imagem 221708: quatro referências e três previsões
+  visualmente próximas das cadeiras em primeiro plano. A cadeira
+  mais encoberta ao fundo não teve previsão exibida.
+- person, imagem 422998: previsão com confiança aproximada de 0.87,
+  visualmente próxima da referência, com diferença na borda inferior.
+
+### Interpretação
+
+Os exemplos ilustram omissões e uma detecção visualmente coerente.
+A oclusão é uma hipótese de dificuldade no exemplo das cadeiras.
+
+A inspeção é qualitativa: não substitui o pareamento por IoU do
+COCOeval nem estabelece as causas do desempenho de toda uma classe.
+O painel de cada exemplo mostra apenas a classe-alvo.
+
+Nenhum peso ou parâmetro da avaliação foi alterado.
