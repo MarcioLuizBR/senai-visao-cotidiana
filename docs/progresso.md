@@ -88,3 +88,11 @@ com pelo menos 10 classes.
 - Resultado: zero erros e zero avisos.
 - Próximo passo: inspecionar visualmente uma amostra das anotações
   e concluir a documentação dos termos de uso.
+
+### Conclusão da preparação dos dados
+
+- Inspecionados dez exemplos de referência, um por classe.
+- Ambiguidades registradas, sem alterar as anotações originais.
+- Documentados os termos gerais das anotações e das imagens.
+- Licenças individuais serão conferidas para exemplos publicados.
+- Preparação pronta para revisão e integração na develop.

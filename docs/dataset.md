@@ -86,20 +86,49 @@ identificada na documentação.
 
 ## Termos de uso e armazenamento
 
+Fonte dos dados: COCO Consortium — COCO 2017, partição val2017.
+
 Referência: https://cocodataset.org/#termsofuse
 
-A licença das anotações e as licenças das imagens serão verificadas
-separadamente antes de qualquer redistribuição.
+### Anotações
 
-As imagens e os arquivos volumosos permanecerão locais.
-O repositório conterá o código de preparação, a documentação
-e o manifesto necessário para reproduzir a seleção.
+As anotações COCO são disponibilizadas sob a licença
+Creative Commons Attribution 4.0 (CC BY 4.0).
+
+Neste projeto, foi criado um subconjunto por seleção de imagens
+e categorias. As coordenadas originais foram preservadas.
+
+### Imagens
+
+As imagens não pertencem ao COCO Consortium e possuem condições
+de uso próprias. A licença das anotações não se aplica
+automaticamente às fotografias.
+
+Os metadados de origem e licença disponíveis foram preservados
+no arquivo local annotations.json.
+
+As licenças individuais das 196 imagens não foram auditadas.
+Antes de publicar uma imagem no README ou no vídeo, serão
+conferidos seus metadados e os créditos necessários.
+
+### Organização dos arquivos
+
+As imagens, as anotações e os resultados volumosos permanecem
+locais e são ignorados pelo Git.
+
+O repositório contém os scripts, a documentação e os manifestos
+para reproduzir a seleção e a preparação.
 
 ## Situação atual
 
-Seleção, download e validação estrutural concluídos.
+Seleção, download, validação estrutural e inspeção visual
+da amostra concluídos.
 
-Verificação dos termos de uso e avaliação do modelo ainda pendentes.
+Termos gerais do COCO documentados. A conferência individual
+de licença e atribuição será feita para as imagens escolhidas
+para publicação.
+
+Avaliação do modelo ainda pendente.
 
 ## Resultado da seleção
 
