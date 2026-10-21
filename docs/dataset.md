@@ -97,11 +97,10 @@ e o manifesto necessário para reproduzir a seleção.
 
 ## Situação atual
 
-Seleção e download concluídos: 196 imagens verificadas, sem falhas
-de leitura, integridade ou divergências de dimensões.
+Seleção, download e validação estrutural concluídos.
 
-Verificação dos termos de uso, validação das anotações e avaliação
-do modelo ainda pendentes.
+Verificação dos termos de uso, inspeção visual de uma amostra
+das anotações e avaliação do modelo ainda pendentes.
 
 ## Resultado da seleção
 
@@ -136,3 +135,21 @@ O manifesto está em [dataset_manifesto.json](dataset_manifesto.json).
 Seleção, contagens e download concluídos. As 196 imagens passaram
 pelas verificações de integridade, leitura e dimensões.
 Nenhuma métrica do modelo foi calculada.
+
+## Validação estrutural
+
+O script scripts/validar_dataset.py verificou:
+
+- Unicidade dos IDs.
+- Correspondência das imagens e classes com o manifesto.
+- Leitura e dimensões das imagens.
+- Referências de imagem e categoria das anotações.
+- Coordenadas finitas, dimensões positivas e limites das bounding boxes.
+- Área positiva e valores válidos de iscrowd.
+- Presença de pelo menos 20 imagens com objetos individuais por classe.
+
+Resultado: 196 imagens, 10 classes e 1.431 anotações,
+incluindo 16 de multidões. Nenhum erro ou aviso encontrado.
+
+Essa verificação é estrutural e não substitui a inspeção visual
+das anotações nem a avaliação das previsões do detector.

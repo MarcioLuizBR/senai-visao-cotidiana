@@ -79,3 +79,12 @@ com pelo menos 10 classes.
 - Baixadas e verificadas as 196 imagens, sem falhas.
 - Dados volumosos mantidos localmente e ignorados pelo Git.
 - Próximo passo: validar as anotações e preparar a avaliação.
+
+## 21/10/2026 — Validação estrutural do dataset
+
+- Script de validação criado e executado.
+- Conferidas 196 imagens, 10 classes e 1.431 anotações.
+- Preservadas 16 anotações de multidões.
+- Resultado: zero erros e zero avisos.
+- Próximo passo: inspecionar visualmente uma amostra das anotações
+  e concluir a documentação dos termos de uso.
