@@ -99,8 +99,7 @@ e o manifesto necessário para reproduzir a seleção.
 
 Seleção, download e validação estrutural concluídos.
 
-Verificação dos termos de uso, inspeção visual de uma amostra
-das anotações e avaliação do modelo ainda pendentes.
+Verificação dos termos de uso e avaliação do modelo ainda pendentes.
 
 ## Resultado da seleção
 
@@ -153,3 +152,36 @@ incluindo 16 de multidões. Nenhum erro ou aviso encontrado.
 
 Essa verificação é estrutural e não substitui a inspeção visual
 das anotações nem a avaliação das previsões do detector.
+
+## Inspeção visual de uma amostra das anotações
+
+Foram inspecionados cinco exemplos gerados a partir das anotações
+de referência, sem executar o detector:
+
+- book, imagem 89648: materiais semelhantes sem marcação;
+  possível ambiguidade de categoria ou omissão.
+- cell phone, imagem 537991: caixas coerentes com os dois aparelhos.
+- chair, imagem 221708: caixas coerentes, com objetos parcialmente ocultos.
+- couch, imagem 293625: extensão da caixa considerada duvidosa.
+- potted plant, imagem 277197: caixa coerente com uma planta pequena ao fundo.
+
+As anotações originais foram preservadas. A inspeção evidencia
+que consistência estrutural não garante ausência de ambiguidades
+ou imperfeições na referência.
+
+Também foram inspecionados:
+
+- bottle, imagem 133244: objeto muito pequeno; confirmação visual
+  inconclusiva na resolução examinada.
+- cup, imagem 31296: marcações plausíveis, com sobreposição de rótulos
+  dificultando a inspeção dos objetos pequenos.
+- dining table, imagem 85157: caixa compatível com a região visível
+  da mesa, parcialmente encoberta por pessoas.
+- laptop, imagem 111609: caixa correspondente ao equipamento
+  parcialmente cortado pela borda da imagem.
+- person, imagem 422998: caixa coerente com a pessoa parcialmente
+  enquadrada, sem necessidade de o rosto estar visível.
+
+A amostra de dez exemplos, um por classe, foi inspecionada.
+As dúvidas foram registradas e as anotações originais preservadas.
+Não foi realizada revisão visual completa das 1.431 anotações.
