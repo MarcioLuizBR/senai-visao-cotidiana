@@ -86,4 +86,23 @@ sem substituir silenciosamente os resultados anteriores.
 
 ## Situação atual
 
-Protocolo definido antes da execução. Métricas ainda não calculadas.
+Primeira avaliação executada nas 196 imagens.
+
+- mAP@0.50:0.95: 0.382974.
+- mAP@0.50: 0.541002.
+- AP@0.75: 0.408763.
+- AR@100: 0.563370.
+- Tempo médio da chamada predict: 128.32 ms.
+- Mediana: 113.11 ms.
+- Percentil 95: 196.60 ms.
+- Previsões coletadas com conf=0.001: 20.465.
+
+Métricas, configuração e mapeamento de classes estão registrados
+em resultados/avaliacao_inicial/.
+
+Os resultados se referem somente ao subconjunto selecionado.
+AP não representa uma porcentagem simples de acertos.
+O tempo medido não representa a latência da API.
+
+Análise de erros ainda pendente, com atenção inicial às classes
+book e chair. Nenhum parâmetro foi ajustado após esta avaliação.
