@@ -96,3 +96,13 @@ com pelo menos 10 classes.
 - Documentados os termos gerais das anotações e das imagens.
 - Licenças individuais serão conferidas para exemplos publicados.
 - Preparação pronta para revisão e integração na develop.
+
+## 21/10/2026 — Avaliação inicial do modelo
+
+- Avaliadas 196 imagens em CPU com YOLO26n pré-treinado.
+- mAP@0.50:0.95 de 0.382974 e mAP@0.50 de 0.541002.
+- Tempo médio por chamada predict: 128.32 ms.
+- Configuração, métricas e mapeamento de classes preservados.
+- Inspecionadas seis comparações entre previsões e referências.
+- Resultados e limitações documentados.
+- Próximo passo: revisar e integrar a avaliação na develop.

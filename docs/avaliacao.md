@@ -104,8 +104,9 @@ Os resultados se referem somente ao subconjunto selecionado.
 AP não representa uma porcentagem simples de acertos.
 O tempo medido não representa a latência da API.
 
-Análise de erros ainda pendente, com atenção inicial às classes
-book e chair. Nenhum parâmetro foi ajustado após esta avaliação.
+Análise qualitativa concluída em seis exemplos, com registros
+de detecções coerentes, omissões e ambiguidades das referências.
+Nenhum parâmetro foi ajustado após a avaliação.
 
 ## Análise qualitativa das previsões
 
@@ -124,6 +125,18 @@ As métricas originais foram preservadas.
   mais encoberta ao fundo não teve previsão exibida.
 - person, imagem 422998: previsão com confiança aproximada de 0.87,
   visualmente próxima da referência, com diferença na borda inferior.
+- laptop, imagem 111609: previsão com confiança aproximada de 0.48
+  e caixa visualmente próxima da referência, apesar do objeto
+  parcialmente cortado pela borda.
+- couch, imagem 293625: nenhuma previsão da classe exibida acima
+  de 0.25. Há forte oclusão e dúvida previamente registrada sobre
+  a extensão da caixa de referência.
+- bottle, imagem 133244: nenhuma previsão da classe exibida acima
+  de 0.25. O objeto anotado ocupa uma região muito pequena da imagem.
+
+Foram examinadas seis comparações qualitativas. Os exemplos
+ilustram acertos e omissões, mas não constituem uma classificação
+completa dos erros das 196 imagens.
 
 ### Interpretação
 
