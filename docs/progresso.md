@@ -70,3 +70,29 @@ com pelo menos 10 classes.
 - Observadas detecções plausíveis com confiança inferior a 0.50.
 - Limiar mantido em 0.25, sem ajuste baseado apenas nesta imagem.
 - Inspeção qualitativa; não foram calculadas métricas de acurácia ou mAP.
+
+## Preparação do dataset COCO
+
+- Selecionadas 196 imagens únicas para avaliação de 10 classes.
+- Preservadas 1.431 anotações, incluindo 16 de multidões.
+- Manifesto da seleção registrado na documentação.
+- Baixadas e verificadas as 196 imagens, sem falhas.
+- Dados volumosos mantidos localmente e ignorados pelo Git.
+- Próximo passo: validar as anotações e preparar a avaliação.
+
+## 21/10/2026 — Validação estrutural do dataset
+
+- Script de validação criado e executado.
+- Conferidas 196 imagens, 10 classes e 1.431 anotações.
+- Preservadas 16 anotações de multidões.
+- Resultado: zero erros e zero avisos.
+- Próximo passo: inspecionar visualmente uma amostra das anotações
+  e concluir a documentação dos termos de uso.
+
+### Conclusão da preparação dos dados
+
+- Inspecionados dez exemplos de referência, um por classe.
+- Ambiguidades registradas, sem alterar as anotações originais.
+- Documentados os termos gerais das anotações e das imagens.
+- Licenças individuais serão conferidas para exemplos publicados.
+- Preparação pronta para revisão e integração na develop.

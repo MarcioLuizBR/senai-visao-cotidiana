@@ -1,0 +1,62 @@
+[
+  {
+    "class_name": "person",
+    "image_id": 422998,
+    "annotation_count": 1,
+    "output_file": "person_422998.jpg"
+  },
+  {
+    "class_name": "bottle",
+    "image_id": 133244,
+    "annotation_count": 1,
+    "output_file": "bottle_133244.jpg"
+  },
+  {
+    "class_name": "cup",
+    "image_id": 31296,
+    "annotation_count": 7,
+    "output_file": "cup_31296.jpg"
+  },
+  {
+    "class_name": "chair",
+    "image_id": 221708,
+    "annotation_count": 4,
+    "output_file": "chair_221708.jpg"
+  },
+  {
+    "class_name": "couch",
+    "image_id": 293625,
+    "annotation_count": 1,
+    "output_file": "couch_293625.jpg"
+  },
+  {
+    "class_name": "potted plant",
+    "image_id": 277197,
+    "annotation_count": 1,
+    "output_file": "potted_plant_277197.jpg"
+  },
+  {
+    "class_name": "dining table",
+    "image_id": 85157,
+    "annotation_count": 1,
+    "output_file": "dining_table_85157.jpg"
+  },
+  {
+    "class_name": "laptop",
+    "image_id": 111609,
+    "annotation_count": 1,
+    "output_file": "laptop_111609.jpg"
+  },
+  {
+    "class_name": "cell phone",
+    "image_id": 537991,
+    "annotation_count": 2,
+    "output_file": "cell_phone_537991.jpg"
+  },
+  {
+    "class_name": "book",
+    "image_id": 89648,
+    "annotation_count": 6,
+    "output_file": "book_89648.jpg"
+  }
+]

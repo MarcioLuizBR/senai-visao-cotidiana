@@ -186,3 +186,7 @@ runs/
 
 # Imagens usadas nos testes locais
 data/local/
+
+# Dados originais e dataset preparado, mantidos localmente
+data/raw/
+data/processed/
