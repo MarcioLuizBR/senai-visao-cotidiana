@@ -209,3 +209,9 @@ Pendência desta etapa: documentar como executar e utilizar a API.
 - Justificativa da escolha do YOLO26n incluída no README.
 - Mantidos os requisitos de dez classes, demonstração dos testes,
   FastAPI, JSON, Kanban, GitHub e vídeo de até sete minutos.
+
+## Conferência de acesso ao Trello
+
+- Professor identificado como membro do quadro.
+- Compartilhamento realizado em 19/10/2026, conforme registro do autor.
+- Acesso público verificado em janela anônima, sem login.

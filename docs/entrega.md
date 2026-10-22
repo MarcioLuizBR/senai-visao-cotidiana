@@ -33,7 +33,7 @@
 
 ## Submissão
 
-- [ ] Conferir acesso ao repositório e ao quadro Trello.
+- [x] Conferir acesso ao repositório e ao quadro Trello.
 - [ ] Incluir o link do vídeo na documentação.
 - [ ] Conferir os links exigidos para submissão.
 - [ ] Submeter a entrega no ambiente do curso.
