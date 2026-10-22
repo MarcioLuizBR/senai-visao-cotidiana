@@ -128,7 +128,8 @@ Termos gerais do COCO documentados. A conferência individual
 de licença e atribuição será feita para as imagens escolhidas
 para publicação.
 
-Avaliação do modelo ainda pendente.
+Avaliação inicial e análise qualitativa concluídas.
+O protocolo e os resultados estão em [Avaliação do modelo](avaliacao.md).
 
 ## Resultado da seleção
 
@@ -162,7 +163,8 @@ O manifesto está em [dataset_manifesto.json](dataset_manifesto.json).
 
 Seleção, contagens e download concluídos. As 196 imagens passaram
 pelas verificações de integridade, leitura e dimensões.
-Nenhuma métrica do modelo foi calculada.
+Na conclusão da seleção, nenhuma métrica do modelo havia sido calculada.
+A avaliação foi realizada posteriormente, conforme avaliacao.md .
 
 ## Validação estrutural
 
@@ -214,3 +216,105 @@ Também foram inspecionados:
 A amostra de dez exemplos, um por classe, foi inspecionada.
 As dúvidas foram registradas e as anotações originais preservadas.
 Não foi realizada revisão visual completa das 1.431 anotações.
+
+## Como reproduzir a preparação
+
+Execute os comandos na raiz do projeto, usando Python 3.11
+e as dependências instaladas com `uv sync --locked`.
+
+### 1. Obter as anotações oficiais
+
+Crie a pasta de arquivos originais:
+
+```powershell
+New-Item -ItemType Directory -Force data/raw
+```
+
+Baixe o pacote de anotações COCO 2017:
+
+```powershell
+curl.exe -L --fail --retry 3 -o data/raw/annotations_trainval2017.zip http://images.cocodataset.org/annotations/annotations_trainval2017.zip
+```
+
+Extraia apenas as anotações de instâncias da validação:
+
+```powershell
+uv run python -c "from zipfile import ZipFile; from pathlib import Path; destino = Path('data/raw'); arquivo = ZipFile(destino / 'annotations_trainval2017.zip'); arquivo.extract('annotations/instances_val2017.json', destino); arquivo.close()"
+```
+
+O arquivo esperado é:
+data/raw/annotations/instances_val2017.json.
+
+Não é necessário baixar os pacotes completos de imagens
+train2017 ou val2017.
+
+### 2. Selecionar o subconjunto
+
+```powershell
+uv run python scripts/selecionar_dataset.py
+```
+
+O script utiliza semente 42 e seleciona 20 imagens elegíveis
+por classe, considerando anotações individuais.
+
+Após unir os IDs e remover duplicatas, o resultado esperado é:
+
+- 196 imagens.
+- 1.431 anotações, incluindo 16 de multidões.
+
+São gerados annotations.json e manifesto.json em
+data/processed/coco_cotidiano/.
+
+A seleção não utiliza previsões do detector.
+
+### 3. Baixar as imagens selecionadas
+
+```powershell
+uv run python scripts/baixar_imagens.py
+```
+
+O script baixa somente as imagens do subconjunto e verifica
+integridade, decodificação e dimensões.
+
+Arquivos existentes e válidos são reutilizados. Em caso de falhas,
+execute novamente para retomar o download.
+
+O relatório fica em:
+data/processed/coco_cotidiano/download_report.json.
+
+Só prossiga quando as 196 imagens estiverem disponíveis
+e o relatório indicar zero falhas.
+
+### 4. Validar a estrutura
+
+```powershell
+uv run python scripts/validar_dataset.py
+```
+
+A validação compara os IDs e as classes com o manifesto versionado
+em docs/dataset_manifesto.json. Não substitua esse arquivo pelo
+manifesto recém-gerado para contornar divergências.
+
+Resultado esperado:
+
+- Imagens: 196.
+- Classes: 10.
+- Anotações: 1.431.
+- Multidões preservadas: 16.
+- Erros: 0.
+- Avisos: 0.
+
+O relatório fica em:
+data/processed/coco_cotidiano/validation_report.json.
+
+A validação estrutural não comprova que todas as anotações
+estejam visualmente corretas.
+
+### 5. Avaliar o detector
+
+Após preparar e validar os dados, siga os comandos de
+[Avaliação do modelo](avaliacao.md).
+
+Os arquivos locais em data/raw e data/processed não são
+versionados. Os scripts e o manifesto permitem reconstruir
+o subconjunto, dependendo da disponibilidade das fontes.
