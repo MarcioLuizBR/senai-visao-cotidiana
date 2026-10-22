@@ -37,6 +37,26 @@ validação das entradas e documentação dos resultados.
 Os nomes retornados pela API permanecem em inglês.
 A API filtra as previsões para essas dez classes.
 
+## Escolha do modelo e escopo acadêmico
+
+Foi escolhido o YOLO26n pré-treinado, variante compacta,
+para viabilizar a execução local em CPU no computador disponível.
+Suas classes incluem os dez objetos selecionados para o projeto.
+
+A escolha priorizou a viabilidade de execução, a integração
+com FastAPI e a avaliação documentada. Não foi realizado
+benchmark entre arquiteturas; portanto, não se afirma que
+esse seja o melhor modelo para todos os cenários.
+
+Conforme esclarecimento do professor na aula de orientação
+(8:28–8:44 e 50:16–50:24), o uso de pesos pré-treinados é permitido
+e o fine-tuning é opcional.
+
+Na mesma orientação, a hospedagem online foi dispensada
+(23:12–24:24). Como o trabalho é individual, utiliza-se um modelo,
+conforme explicado em 25:48–26:04.
+
+
 ## Tecnologias
 
 - Python 3.11.

@@ -17,10 +17,10 @@
 - [x] Documentação do dataset, avaliação e API.
 - [x] requirements.txt exportado do uv.lock.
 - [x] Instruções de reprodução conferidas nos scripts.
-- [ ] Revisar a documentação renderizada no GitHub.
-- [ ] Conferir a entrega com o enunciado original do curso.
+- [x] Revisar a documentação renderizada no GitHub.
+- [x] Conferir a entrega com o enunciado original do curso.
 - [ ] Conferir licenças e créditos das imagens escolhidas para publicação.
-- [ ] Integrar a documentação na develop.
+- [x] Integrar a documentação na develop.
 - [ ] Integrar a versão revisada na main.
 
 ## Vídeo e evidências
