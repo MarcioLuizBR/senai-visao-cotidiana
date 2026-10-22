@@ -226,3 +226,12 @@ Pendência desta etapa: documentar como executar e utilizar a API.
   previsões salvas e limiar visual de 0,25.
 - Métricas e amostra original preservadas.
 - Inspeção dos novos painéis e conferência dos créditos pendentes.
+
+## Créditos das imagens da apresentação
+
+- Registradas as fontes das seis fotografias selecionadas.
+- Autoria identificada para três imagens.
+- Três páginas de origem ficaram inacessíveis na consulta.
+- Licenças registradas conforme os metadados COCO,
+  sem reconfirmação nas páginas individuais.
+- Conferência de créditos permanece parcial.
