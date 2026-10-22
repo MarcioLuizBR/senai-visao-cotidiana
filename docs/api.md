@@ -180,3 +180,23 @@ a avaliação quantitativa do detector, descrita em `avaliacao.md`.
 - O acesso ao modelo é serializado, limitando a capacidade simultânea.
 - A aplicação foi preparada para demonstração acadêmica local.
 - As imagens recebidas e as previsões não são salvas pelo código da API.
+
+## Testes automatizados
+
+Na raiz do projeto, execute:
+
+```powershell
+uv sync --locked
+uv run python -m pytest tests/test_api.py -v
+```
+
+Não é necessário iniciar o Uvicorn ou possuir os pesos do modelo.
+
+Os 11 casos verificam disponibilidade, arquivo obrigatório,
+rejeição de entradas inválidas, limites de bytes e pixels,
+JPEG/PNG válidos sem detecções, serialização, arredondamento
+e filtragem de classes.
+
+A inferência é simulada para verificar o comportamento da API.
+Esses testes complementam os testes manuais com o modelo real
+e não medem a qualidade do detector.

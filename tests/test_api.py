@@ -1,6 +1,8 @@
 """Testes do contrato HTTP e das validações de entrada da API."""
 
 from io import BytesIO
+from types import SimpleNamespace
+from unittest.mock import Mock
 
 import pytest
 from fastapi.testclient import TestClient
@@ -144,3 +146,95 @@ def test_limite_de_pixels(cliente, monkeypatch):
     assert resposta.json() == {
         "detail": "A imagem excede o limite de 20 milhões de pixels."
     }
+
+
+
+@pytest.fixture
+def cliente_inferencia(monkeypatch, tmp_path):
+    """Disponibiliza uma inferência controlada para testar o JSON da API."""
+    modelo = Mock()
+    modelo.names = dict(enumerate(sorted(main.CLASSES)))
+
+    # Por padrão, simula uma imagem processada sem objetos detectados.
+    modelo.predict.return_value = [
+        SimpleNamespace(boxes=[], names=modelo.names)
+    ]
+
+    pesos = tmp_path / "modelo.pt"
+    pesos.touch()
+    monkeypatch.setattr(main, "PESOS", pesos)
+    monkeypatch.setattr(main, "YOLO", lambda caminho: modelo)
+
+    with TestClient(main.app) as client:
+        yield client, modelo
+
+
+def criar_caixa(classe, confianca, coordenadas):
+    """Simula apenas os métodos de uma caixa utilizados pela API."""
+    return SimpleNamespace(
+        cls=SimpleNamespace(item=lambda: classe),
+        conf=SimpleNamespace(item=lambda: confianca),
+        xyxy=[SimpleNamespace(tolist=lambda: coordenadas)],
+    )
+
+
+@pytest.mark.parametrize(
+    "formato,mime",
+    [("JPEG", "image/jpeg"), ("PNG", "image/png")],
+)
+def test_imagem_valida_sem_deteccoes(cliente_inferencia, formato, mime):
+    cliente, modelo = cliente_inferencia
+
+    resposta = cliente.post(
+        "/detect",
+        files={
+            "file": (
+                f"imagem.{formato.lower()}",
+                criar_imagem(formato),
+                mime,
+            )
+        },
+    )
+
+    assert resposta.status_code == 200
+    assert resposta.json() == {"status": "success", "detections": []}
+    modelo.predict.assert_called_once()
+
+
+def test_serializar_deteccao_e_filtrar_classes(cliente_inferencia):
+    cliente, modelo = cliente_inferencia
+
+    # A inferência simulada inclui uma classe do projeto e outra fora dele.
+    # Assim verificamos se a API filtra o resultado antes de responder.
+    modelo.predict.return_value = [
+        SimpleNamespace(
+            names={0: "chair", 1: "car"},
+            boxes=[
+                criar_caixa(0, 0.912345, [1.234, 2.346, 20.567, 30.789]),
+                criar_caixa(1, 0.99, [0.0, 0.0, 10.0, 10.0]),
+            ],
+        )
+    ]
+
+    resposta = cliente.post(
+        "/detect",
+        files={"file": ("imagem.png", criar_imagem("PNG"), "image/png")},
+    )
+
+    assert resposta.status_code == 200
+    assert resposta.json() == {
+        "status": "success",
+        "detections": [
+            {
+                "class_name": "chair",
+                "confidence": 0.9123,
+                "box": {
+                    "x_min": 1.23,
+                    "y_min": 2.35,
+                    "x_max": 20.57,
+                    "y_max": 30.79,
+                },
+            }
+        ],
+    }
+    modelo.predict.assert_called_once()

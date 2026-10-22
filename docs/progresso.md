@@ -169,3 +169,10 @@ Pendência desta etapa: documentar como executar e utilizar a API.
   os limites reais também foram verificados manualmente.
 - Execução: uv run python -m pytest tests/test_api.py -v
 - Resultado: 8 passed, sem avisos.
+
+## Testes automatizados — respostas de sucesso
+
+- Adicionados casos de JPEG e PNG válidos com lista vazia.
+- Verificados formato do JSON, arredondamento e filtragem de classes.
+- Resultado do conjunto completo: 11 passed, sem avisos.
+- Instruções de execução registradas em docs/api.md.
