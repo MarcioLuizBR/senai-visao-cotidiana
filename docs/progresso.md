@@ -199,3 +199,39 @@ Pendência desta etapa: documentar como executar e utilizar a API.
 - Corrigida a indicação desatualizada de avaliação pendente.
 - Caminhos e argumentos conferidos nos scripts.
 - Nesta revisão documental, o processo completo não foi reexecutado.
+
+## Conferência do escopo acadêmico
+
+- Enunciado e transcrição da orientação conferidos.
+- Confirmada a permissão para usar pesos pré-treinados,
+  sem fine-tuning, e demonstrar a API localmente.
+- Confirmado que um modelo é suficiente para o trabalho individual.
+- Justificativa da escolha do YOLO26n incluída no README.
+- Mantidos os requisitos de dez classes, demonstração dos testes,
+  FastAPI, JSON, Kanban, GitHub e vídeo de até sete minutos.
+
+## Conferência de acesso ao Trello
+
+- Professor identificado como membro do quadro.
+- Compartilhamento realizado em 19/10/2026, conforme registro do autor.
+- Acesso público verificado em janela anônima, sem login.
+
+## Preparação das comparações para o vídeo
+
+- Criado docs/amostra_video.json com dez exemplos por classe,
+  distribuídos em seis imagens únicas.
+- Script comparar_previsoes.py ampliado com argumentos
+  --amostra e --pasta-saida.
+- Dez painéis gerados em comparacoes_video, utilizando
+  previsões salvas e limiar visual de 0,25.
+- Métricas e amostra original preservadas.
+- Inspeção dos novos painéis e conferência dos créditos pendentes.
+
+## Créditos das imagens da apresentação
+
+- Registradas as fontes das seis fotografias selecionadas.
+- Autoria identificada para três imagens.
+- Três páginas de origem ficaram inacessíveis na consulta.
+- Licenças registradas conforme os metadados COCO,
+  sem reconfirmação nas páginas individuais.
+- Conferência de créditos permanece parcial.

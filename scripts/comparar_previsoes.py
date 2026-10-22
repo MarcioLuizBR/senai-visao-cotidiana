@@ -44,6 +44,20 @@ def main():
         type=Path,
         help="Pasta da avaliação que contém previsoes.json.",
     )
+    
+    parser.add_argument(
+        "--amostra",
+        type=Path,
+        default=RAIZ / "docs/amostra_inspecao.json",
+        help="Manifesto com as classes e imagens que serão comparadas.",
+    )
+    parser.add_argument(
+        "--pasta-saida",
+        default="comparacoes",
+        choices=["comparacoes", "comparacoes_video"],
+        help="Subpasta de destino dentro da execução da avaliação.",
+    )
+    
     args = parser.parse_args()
 
     dados = json.loads(
@@ -52,13 +66,13 @@ def main():
     previsoes = json.loads(
         (args.execucao / "previsoes.json").read_text(encoding="utf-8")
     )
-    amostra = json.loads(
-        (RAIZ / "docs/amostra_inspecao.json").read_text(encoding="utf-8")
-    )
+    
+    # Permite uma seleção para apresentação sem alterar a amostra original.
+    amostra = json.loads(args.amostra.read_text(encoding="utf-8"))
 
     imagens = {item["id"]: item for item in dados["images"]}
     categorias = {item["name"]: item["id"] for item in dados["categories"]}
-    saida = args.execucao / "comparacoes"
+    saida = args.execucao / args.pasta_saida
     saida.mkdir(parents=True, exist_ok=True)
 
     for exemplo in amostra:

@@ -215,3 +215,21 @@ A versão instalada emitiu um aviso de depreciação desse parâmetro.
 Na API, ele foi substituído por quantize=None e a inferência
 foi novamente verificada. O script e os registros da avaliação
 inicial foram preservados.
+
+## Inspeção adicional para o vídeo
+
+Foram examinados quatro painéis da amostra de apresentação,
+com confiança mínima de 0,25:
+
+- bottle, imagem 25057: referência sem previsão exibida.
+- book, imagem 222299: previsões próximas de duas referências,
+  omissão do livro preto e caixas adicionais, incluindo sobreposições.
+- potted plant, imagem 277197: previsão próxima da referência
+  ao fundo e outra sobre um arranjo sem anotação correspondente.
+- cell phone, imagem 537991: duas previsões visualmente próximas
+  das referências, com confiança aproximada de 0,73 e 0,71.
+
+A inspeção é qualitativa, sem pareamento formal por IoU.
+A amostra foi escolhida para apresentação após a avaliação
+e não substitui os resultados das 196 imagens.
+
