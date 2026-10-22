@@ -147,3 +147,11 @@ revisar o aviso do parâmetro half e documentar a execução da API.
 - Aviso de depreciação de half ausente na nova requisição.
 
 Pendência desta etapa: documentar como executar e utilizar a API.
+
+## Documentação de utilização da API
+
+- Criado docs/api.md com preparação, execução, endpoints,
+  classes, limites, respostas HTTP e limitações.
+- Exemplo de upload por curl.exe executado com sucesso:
+  retorno JSON com as mesmas 12 detecções da imagem de escritório.
+
