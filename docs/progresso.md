@@ -176,3 +176,17 @@ Pendência desta etapa: documentar como executar e utilizar a API.
 - Verificados formato do JSON, arredondamento e filtragem de classes.
 - Resultado do conjunto completo: 11 passed, sem avisos.
 - Instruções de execução registradas em docs/api.md.
+
+## Consolidação da documentação e dependências
+
+- README atualizado com instalação, API, dataset, métricas,
+  testes e limitações.
+- requirements.txt exportado do uv.lock, sem dependências
+  de desenvolvimento e com hashes preservados.
+- Índice adicional do PyTorch incluído para localizar
+  as distribuições de CPU.
+- Verificação com uv pip install --dry-run --require-hashes
+  --index-strategy unsafe-best-match -r requirements.txt:
+  requisitos satisfeitos, sem alterações no ambiente atual.
+- Instalação do zero pelo requirements.txt ainda não verificada.
+- uv sync --locked permanece como instalação principal.
