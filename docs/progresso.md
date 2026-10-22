@@ -155,3 +155,17 @@ Pendência desta etapa: documentar como executar e utilizar a API.
 - Exemplo de upload por curl.exe executado com sucesso:
   retorno JSON com as mesmas 12 detecções da imagem de escritório.
 
+## Testes automatizados — validação de entrada
+
+- Adicionadas as dependências de desenvolvimento pytest e httpx2.
+- Criado tests/test_api.py com oito casos aprovados:
+  disponibilidade, ausência do arquivo obrigatório, arquivo vazio,
+  texto, JPEG falso, GIF e limites de bytes e pixels.
+- Utilizado modelo simulado para evitar carregar pesos e executar
+  inferência nestes testes.
+- O modelo simulado gera uma falha caso uma entrada inválida
+  chegue à inferência.
+- Limites reduzidos temporariamente nos testes automatizados;
+  os limites reais também foram verificados manualmente.
+- Execução: uv run python -m pytest tests/test_api.py -v
+- Resultado: 8 passed, sem avisos.
