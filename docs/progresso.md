@@ -215,3 +215,14 @@ Pendência desta etapa: documentar como executar e utilizar a API.
 - Professor identificado como membro do quadro.
 - Compartilhamento realizado em 19/10/2026, conforme registro do autor.
 - Acesso público verificado em janela anônima, sem login.
+
+## Preparação das comparações para o vídeo
+
+- Criado docs/amostra_video.json com dez exemplos por classe,
+  distribuídos em seis imagens únicas.
+- Script comparar_previsoes.py ampliado com argumentos
+  --amostra e --pasta-saida.
+- Dez painéis gerados em comparacoes_video, utilizando
+  previsões salvas e limiar visual de 0,25.
+- Métricas e amostra original preservadas.
+- Inspeção dos novos painéis e conferência dos créditos pendentes.
