@@ -117,3 +117,22 @@ com pelo menos 10 classes.
 - Resultado da imagem local coincidiu com o teste inicial do script.
 - Tratamentos de arquivos inválidos e limites ainda aguardam testes.
 - Aviso de depreciação do parâmetro half registrado para revisão.
+
+## Validação manual da API
+
+Testes realizados pelo Swagger no endpoint POST /detect:
+
+- JPEG de escritório: HTTP 200, com 12 detecções.
+- Arquivo de texto: HTTP 400, conteúdo inválido.
+- Arquivo vazio: HTTP 400, arquivo vazio.
+- Imagem GIF: HTTP 415, formato não permitido.
+- Arquivo com 10.485.761 bytes: HTTP 413, limite de 10 MiB excedido.
+- PNG com 20.005.000 pixels: HTTP 413, limite de pixels excedido.
+- PNG branco de 640 × 480: HTTP 200, com detections vazio.
+
+Todos os casos acima apresentaram o comportamento esperado.
+Os arquivos utilizados nos testes permanecem em data/local,
+fora do versionamento.
+
+Pendências: documentar as respostas de erro no Swagger,
+revisar o aviso do parâmetro half e documentar a execução da API.
