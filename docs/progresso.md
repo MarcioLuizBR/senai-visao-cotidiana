@@ -106,3 +106,14 @@ com pelo menos 10 classes.
 - Inspecionadas seis comparações entre previsões e referências.
 - Resultados e limitações documentados.
 - Próximo passo: revisar e integrar a avaliação na develop.
+
+## Primeira execução da API FastAPI
+
+- Modelo carregado na inicialização por lifespan.
+- Endpoint POST /detect recebe imagem por UploadFile.
+- Inferência executada em CPU, com confiança mínima de 0.25.
+- Resposta limitada às 10 classes do projeto.
+- Teste pelo Swagger retornou HTTP 200 e JSON com 12 detecções.
+- Resultado da imagem local coincidiu com o teste inicial do script.
+- Tratamentos de arquivos inválidos e limites ainda aguardam testes.
+- Aviso de depreciação do parâmetro half registrado para revisão.
