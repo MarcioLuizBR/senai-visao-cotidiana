@@ -148,3 +148,70 @@ COCOeval nem estabelece as causas do desempenho de toda uma classe.
 O painel de cada exemplo mostra apenas a classe-alvo.
 
 Nenhum peso ou parâmetro da avaliação foi alterado.
+
+## Como reproduzir a avaliação
+
+Execute os comandos na raiz do projeto.
+
+### Pré-requisitos
+
+- Dependências instaladas com `uv sync --locked`.
+- Pesos `yolo26n.pt` na raiz do projeto.
+- Subconjunto preparado e validado conforme `dataset.md`.
+- Anotações em `data/processed/coco_cotidiano/annotations.json`.
+- Imagens em `data/processed/coco_cotidiano/images/`.
+
+### Executar
+
+```powershell
+uv run python scripts/avaliar_modelo.py
+```
+
+O script utiliza os parâmetros definidos em PARAMETROS e cria
+uma nova pasta em runs/avaliacao a cada execução.
+
+São registrados:
+
+- configuracao.json: parâmetros, versões, hashes e IDs avaliados.
+- mapeamento_classes.json: associação entre classes YOLO e COCO.
+- previsoes.json: previsões utilizadas nas métricas.
+- tempos.json: duração de cada chamada predict.
+- metricas.json: métricas gerais, por classe e resumo dos tempos.
+
+Os resultados locais não substituem automaticamente os registros
+versionados em docs/resultados/avaliacao_inicial.
+
+O tempo de processamento pode variar conforme o computador
+e sua carga de trabalho. A reprodução deve considerar as versões,
+os pesos, as anotações e os parâmetros registrados na execução.
+
+### Comparar previsões e referências
+
+Para visualizar a execução inicial, quando sua pasta local
+estiver disponível:
+
+```powershell
+uv run python scripts/comparar_previsoes.py runs/avaliacao/20261021_175407_503006
+```
+
+Para outra execução, substitua o caminho pelo diretório informado
+ao final da avaliação.
+
+O script utiliza docs/amostra_inspecao.json e salva os painéis
+na subpasta comparacoes da execução escolhida.
+
+As referências aparecem à esquerda, em verde, e as previsões
+à direita, em ciano. Cada painel apresenta somente a classe-alvo.
+
+O limiar de 0,25 é aplicado apenas à visualização.
+O script não executa novamente o detector nem recalcula as métricas.
+
+### Compatibilidade do parâmetro de precisão
+
+O script da avaliação inicial mantém half=False, conforme
+o protocolo e a configuração registrados naquela execução.
+
+A versão instalada emitiu um aviso de depreciação desse parâmetro.
+Na API, ele foi substituído por quantize=None e a inferência
+foi novamente verificada. O script e os registros da avaliação
+inicial foram preservados.
