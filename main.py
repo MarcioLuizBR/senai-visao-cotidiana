@@ -44,6 +44,12 @@ class RespostaDeteccao(BaseModel):
     detections: list[Deteccao]
 
 
+class RespostaErro(BaseModel):
+    """Formato das mensagens de erro emitidas pela aplicação."""
+
+    detail: str
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Carrega uma vez por processo do servidor, antes das requisições.
@@ -115,7 +121,27 @@ def health():
     "/detect",
     response_model=RespostaDeteccao,
     summary="Detectar objetos em uma imagem",
+    # Documenta os erros que já são tratados com HTTPException.
+    responses={
+        400: {
+            "model": RespostaErro,
+            "description": "Arquivo vazio, inválido ou imagem corrompida.",
+        },
+        413: {
+            "model": RespostaErro,
+            "description": (
+                "Arquivo acima de 10 MiB ou imagem acima de "
+                "20 milhões de pixels."
+            ),
+        },
+        415: {
+            "model": RespostaErro,
+            "description": "Formato não permitido. Envie JPEG ou PNG.",
+        },
+    },
 )
+
+
 def detectar(
     request: Request,
     file: Annotated[UploadFile, File(description="Imagem JPEG ou PNG")],
@@ -145,7 +171,7 @@ def detectar(
                 device="cpu",
                 imgsz=640,
                 conf=CONFIANCA,
-                half=False,
+                quantize=None,
                 max_det=300,
                 augment=False,
                 save=False,
