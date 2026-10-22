@@ -106,3 +106,52 @@ com pelo menos 10 classes.
 - Inspecionadas seis comparações entre previsões e referências.
 - Resultados e limitações documentados.
 - Próximo passo: revisar e integrar a avaliação na develop.
+
+## Primeira execução da API FastAPI
+
+- Modelo carregado na inicialização por lifespan.
+- Endpoint POST /detect recebe imagem por UploadFile.
+- Inferência executada em CPU, com confiança mínima de 0.25.
+- Resposta limitada às 10 classes do projeto.
+- Teste pelo Swagger retornou HTTP 200 e JSON com 12 detecções.
+- Resultado da imagem local coincidiu com o teste inicial do script.
+- Tratamentos de arquivos inválidos e limites ainda aguardam testes.
+- Aviso de depreciação do parâmetro half registrado para revisão.
+
+## Validação manual da API
+
+Testes realizados pelo Swagger no endpoint POST /detect:
+
+- JPEG de escritório: HTTP 200, com 12 detecções.
+- Arquivo de texto: HTTP 400, conteúdo inválido.
+- Arquivo vazio: HTTP 400, arquivo vazio.
+- Imagem GIF: HTTP 415, formato não permitido.
+- Arquivo com 10.485.761 bytes: HTTP 413, limite de 10 MiB excedido.
+- PNG com 20.005.000 pixels: HTTP 413, limite de pixels excedido.
+- PNG branco de 640 × 480: HTTP 200, com detections vazio.
+
+Todos os casos acima apresentaram o comportamento esperado.
+Os arquivos utilizados nos testes permanecem em data/local,
+fora do versionamento.
+
+Pendências: documentar as respostas de erro no Swagger,
+revisar o aviso do parâmetro half e documentar a execução da API.
+
+## Atualização da documentação e configuração da API
+
+- Respostas HTTP 400, 413 e 415 documentadas no Swagger.
+- Modelo RespostaErro adicionado para descrever o campo detail.
+- Parâmetro obsoleto half=False substituído por quantize=None,
+  conforme a configuração disponível na versão instalada.
+- Nova requisição com teste.jpg retornou HTTP 200.
+- Aviso de depreciação de half ausente na nova requisição.
+
+Pendência desta etapa: documentar como executar e utilizar a API.
+
+## Documentação de utilização da API
+
+- Criado docs/api.md com preparação, execução, endpoints,
+  classes, limites, respostas HTTP e limitações.
+- Exemplo de upload por curl.exe executado com sucesso:
+  retorno JSON com as mesmas 12 detecções da imagem de escritório.
+

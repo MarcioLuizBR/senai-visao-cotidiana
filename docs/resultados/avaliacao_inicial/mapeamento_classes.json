@@ -1,0 +1,52 @@
+[
+  {
+    "model_class_id": 0,
+    "coco_category_id": 1,
+    "class_name": "person"
+  },
+  {
+    "model_class_id": 39,
+    "coco_category_id": 44,
+    "class_name": "bottle"
+  },
+  {
+    "model_class_id": 41,
+    "coco_category_id": 47,
+    "class_name": "cup"
+  },
+  {
+    "model_class_id": 56,
+    "coco_category_id": 62,
+    "class_name": "chair"
+  },
+  {
+    "model_class_id": 57,
+    "coco_category_id": 63,
+    "class_name": "couch"
+  },
+  {
+    "model_class_id": 58,
+    "coco_category_id": 64,
+    "class_name": "potted plant"
+  },
+  {
+    "model_class_id": 60,
+    "coco_category_id": 67,
+    "class_name": "dining table"
+  },
+  {
+    "model_class_id": 63,
+    "coco_category_id": 73,
+    "class_name": "laptop"
+  },
+  {
+    "model_class_id": 67,
+    "coco_category_id": 77,
+    "class_name": "cell phone"
+  },
+  {
+    "model_class_id": 73,
+    "coco_category_id": 84,
+    "class_name": "book"
+  }
+]

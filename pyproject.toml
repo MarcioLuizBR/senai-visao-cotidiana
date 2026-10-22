@@ -3,10 +3,13 @@ name = "senai-visao-cotidiana"
 version = "0.1.0"
 requires-python = ">=3.11"
 dependencies = [
+    "fastapi>=0.159.1",
     "pycocotools>=2.0.11",
+    "python-multipart>=0.0.32",
     "torch>=2.14.1",
     "torchvision>=0.29.1",
     "ultralytics>=8.4.183",
+    "uvicorn>=0.54.0",
 ]
 
 # Usa as distribuições de CPU do PyTorch e do Torchvision.
