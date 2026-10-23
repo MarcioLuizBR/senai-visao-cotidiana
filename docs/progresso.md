@@ -235,3 +235,13 @@ Pendência desta etapa: documentar como executar e utilizar a API.
 - Licenças registradas conforme os metadados COCO,
   sem reconfirmação nas páginas individuais.
 - Conferência de créditos permanece parcial.
+
+## 23/10/2026 — Preparação da entrega final
+
+- Narração gravada com voz do autor.
+- Vídeo editado no CapCut e exportado com aproximadamente 6min38s.
+- Incluídas demonstração da API, validação do dataset,
+  métricas, comparações visuais, testes, Trello e histórico Git.
+- Créditos das imagens incluídos no encerramento.
+- Vídeo enviado ao Google Drive e link registrado no README.
+- Pendente integração final na main e submissão no ambiente do curso.
