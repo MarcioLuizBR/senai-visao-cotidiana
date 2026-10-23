@@ -306,6 +306,16 @@ O requirements.txt é fornecido como formato complementar.
 Ele não preserva a associação exclusiva entre pacotes e índices
 definida no pyproject.toml.
 
+## Vídeo de apresentação
+
+[Assistir à apresentação do projeto no Google Drive](https://drive.google.com/file/d/1Jg95z6HKhw6nSxosiEIHuhB0Q0TBT5AJ/view)
+
+Vídeo acadêmico com demonstração da API, preparação dos dados,
+avaliação, testes automatizados e organização do desenvolvimento.
+
+Os créditos e as fontes das imagens estão em
+[Créditos das imagens](docs/creditos_imagens.md).
+
 ## Autor
 
 Márcio Luiz

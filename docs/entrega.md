@@ -19,22 +19,22 @@
 - [x] Instruções de reprodução conferidas nos scripts.
 - [x] Revisar a documentação renderizada no GitHub.
 - [x] Conferir a entrega com o enunciado original do curso.
-- [ ] Conferir licenças e créditos das imagens escolhidas para publicação.
+- [x] Registrar fontes, créditos disponíveis e limites da verificação das imagens.
 - [x] Integrar a documentação na develop.
 - [ ] Integrar a versão revisada na main.
 
 ## Vídeo e evidências
 
-- [ ] Conferir os prints dos PRs com status Merged.
-- [ ] Separar demonstração da API, métricas e resultado dos testes.
-- [ ] Preparar roteiro de até sete minutos.
-- [ ] Gravar, editar e revisar o vídeo.
-- [ ] Publicar o vídeo e verificar o acesso ao link.
+- [x] Conferir os prints dos PRs com status Merged.
+- [x] Separar demonstração da API, métricas e resultado dos testes.
+- [x] Preparar roteiro de até sete minutos.
+- [x] Gravar, editar e revisar o vídeo.
+- [x] Publicar o vídeo e verificar o acesso ao link.
 
 ## Submissão
 
 - [x] Conferir acesso ao repositório e ao quadro Trello.
-- [ ] Incluir o link do vídeo na documentação.
+- [x] Incluir o link do vídeo na documentação.
 - [ ] Conferir os links exigidos para submissão.
 - [ ] Submeter a entrega no ambiente do curso.
 - [ ] Guardar o comprovante de submissão.
