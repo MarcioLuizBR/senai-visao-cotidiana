@@ -1,0 +1,30 @@
+[project]
+name = "senai-visao-cotidiana"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.159.1",
+    "pycocotools>=2.0.11",
+    "python-multipart>=0.0.32",
+    "torch>=2.14.1",
+    "torchvision>=0.29.1",
+    "ultralytics>=8.4.183",
+    "uvicorn>=0.54.0",
+]
+
+# Usa as distribuições de CPU do PyTorch e do Torchvision.
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+torchvision = { index = "pytorch-cpu" }
+
+# Este índice fica reservado aos pacotes indicados acima.
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[dependency-groups]
+dev = [
+    "httpx2>=2.16.0",
+    "pytest>=9.1.1",
+]

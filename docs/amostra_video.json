@@ -1,0 +1,12 @@
+[
+  {"class_name": "person", "image_id": 25057},
+  {"class_name": "bottle", "image_id": 25057},
+  {"class_name": "cup", "image_id": 80932},
+  {"class_name": "chair", "image_id": 80932},
+  {"class_name": "dining table", "image_id": 80932},
+  {"class_name": "couch", "image_id": 277197},
+  {"class_name": "potted plant", "image_id": 277197},
+  {"class_name": "book", "image_id": 222299},
+  {"class_name": "laptop", "image_id": 527427},
+  {"class_name": "cell phone", "image_id": 537991}
+]
