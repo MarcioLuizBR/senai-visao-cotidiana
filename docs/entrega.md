@@ -21,7 +21,7 @@
 - [x] Conferir a entrega com o enunciado original do curso.
 - [x] Registrar fontes, créditos disponíveis e limites da verificação das imagens.
 - [x] Integrar a documentação na develop.
-- [ ] Integrar a versão revisada na main.
+- [x] Integrar a versão revisada na main.
 
 ## Vídeo e evidências
 
@@ -35,7 +35,7 @@
 
 - [x] Conferir acesso ao repositório e ao quadro Trello.
 - [x] Incluir o link do vídeo na documentação.
-- [ ] Conferir os links exigidos para submissão.
+- [x] Conferir os links exigidos para submissão.
 - [ ] Submeter a entrega no ambiente do curso.
 - [ ] Guardar o comprovante de submissão.
 

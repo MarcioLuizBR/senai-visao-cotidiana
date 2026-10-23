@@ -245,3 +245,10 @@ Pendência desta etapa: documentar como executar e utilizar a API.
 - Créditos das imagens incluídos no encerramento.
 - Vídeo enviado ao Google Drive e link registrado no README.
 - Pendente integração final na main e submissão no ambiente do curso.
+
+## 23/10/2026 — Integração da versão de entrega
+
+- Projeto integrado à main pelo PR #10.
+- Commit de integração: bb5614c.
+- Cópia local sincronizada e sem alterações pendentes.
+- Submissão no ambiente do curso ainda pendente.
